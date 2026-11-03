@@ -1,0 +1,3936 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R 22 0 R 24 0 R] /Count 9 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique >>
+endobj
+7 0 obj
+<< /Length 9150 >>
+stream
+0.08 0.35 0.65 rg
+45.00 770.89 3.50 18.00 re
+f
+BT
+/F2 15 Tf
+0.08 0.22 0.42 rg
+55 774.89 Td
+(Synthetic Dataset Generation for Rare Medicinal Plants) Tj
+ET
+BT
+/F2 12.5 Tf
+0.12 0.28 0.50 rg
+45 744.89 Td
+(Technical Documentation - Methods, Algorithms & Pipeline) Tj
+ET
+0.86 0.89 0.93 RG
+0.5 w
+45.00 721.89 505.28 0.75 re
+S
+0.08 0.35 0.65 rg
+45.00 697.89 3.50 18.00 re
+f
+BT
+/F2 15 Tf
+0.08 0.22 0.42 rg
+55 701.89 Td
+(Table of Contents) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 684.89 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 681.89 Td
+(1. [Project Overview]\(#1-project-overview\)) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 669.89 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 666.89 Td
+(2. [Dataset - Species & Sources]\(#2-dataset--species--sources\)) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 654.89 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 651.89 Td
+(3. [Phase 1 - Seed Data Collection]\(#3-phase-1--seed-data-collection\)) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 639.89 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 636.89 Td
+(4. [Phase 2 - Lighting Augmentation \(Pix2Pix cGAN\)]\(#4-phase-2--lighting-augmentation-pix2pix-cgan\)) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 624.89 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 621.89 Td
+(5. [Phase 3 - Background Harmonization GAN]\(#5-phase-3--background-harmonization-gan\)) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 609.89 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 606.89 Td
+(6. [Phase 4 - CycleGAN \(Unpaired Domain Translation\)]\(#6-phase-4--cyclegan-unpaired-domain-translation\)) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 594.89 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 591.89 Td
+(7. [Phase 5 - Weather Scene Simulation]\(#7-phase-5--weather-scene-simulation\)) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 579.89 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 576.89 Td
+(8. [Final Dataset Summary]\(#8-final-dataset-summary\)) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 564.89 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 561.89 Td
+(9. [Tools & Environment]\(#9-tools--environment\)) Tj
+ET
+0.86 0.89 0.93 RG
+0.5 w
+45.00 540.89 505.28 0.75 re
+S
+0.08 0.35 0.65 rg
+45.00 516.89 3.50 18.00 re
+f
+BT
+/F2 15 Tf
+0.08 0.22 0.42 rg
+55 520.89 Td
+(1. Project Overview) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 500.89 Td
+(Goal: Build a large, annotated synthetic image dataset of rare medicinal plants to support downstream) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 487.39 Td
+(machine learning classification tasks, where real-world data is extremely limited due to the) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 473.89 Td
+(endangered/rare nature of these species.) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 456.39 Td
+(Core Problem: Rare medicinal plants have very few publicly available images - often fewer than 30) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 442.89 Td
+(research-grade photographs exist per species on any scientific platform. This is insufficient to train) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 429.39 Td
+(a robust classifier. Standard data augmentation \(flips, crops, rotations\) introduces only marginal) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 415.89 Td
+(diversity. We therefore use a multi-stage GAN pipeline to synthesize photorealistic variants covering:) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 401.39 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 398.39 Td
+(Different lighting conditions \(bright sunlight, dim canopy, dark flash photography\)) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 386.39 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 383.39 Td
+(Different weather environments \(summer, winter, monsoon\)) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 371.39 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 368.39 Td
+(Different imaging contexts \(field photography, herbarium specimens\)) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 353.39 Td
+(Platform: Google Colab \(T4 GPU\)) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 335.89 Td
+(Framework: PyTorch 2.x) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 318.39 Td
+(Language: Python 3.13) Tj
+ET
+0.86 0.89 0.93 RG
+0.5 w
+45.00 294.89 505.28 0.75 re
+S
+0.08 0.35 0.65 rg
+45.00 270.89 3.50 18.00 re
+f
+BT
+/F2 15 Tf
+0.08 0.22 0.42 rg
+55 274.89 Td
+(2. Dataset - Species & Sources) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 254.89 Td
+(All 12 species are IUCN-listed rare or threatened medicinal plants sourced exclusively from) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 241.39 Td
+(authenticated open-science repositories.) Tj
+ET
+0.12 0.25 0.45 rg
+45.00 204.89 505.28 20.00 re
+f
+BT
+/F2 8.5 Tf
+1 1 1 rg
+51 211.89 Td
+(#) Tj
+ET
+BT
+/F2 8.5 Tf
+1 1 1 rg
+76.01386138613861 211.89 Td
+(Scientific Name) Tj
+ET
+BT
+/F2 8.5 Tf
+1 1 1 rg
+216.09148514851486 211.89 Td
+(Common Name) Tj
+ET
+BT
+/F2 8.5 Tf
+1 1 1 rg
+336.15801980198023 211.89 Td
+(IUCN Status) Tj
+ET
+BT
+/F2 8.5 Tf
+1 1 1 rg
+436.2134653465347 211.89 Td
+(Family) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 188.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 193.89 Td
+(1) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+76.01386138613861 193.89 Td
+(Rauvolfia serpentina) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+216.09148514851486 193.89 Td
+(Sarpagandha) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+336.15801980198023 193.89 Td
+(Endangered) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+436.2134653465347 193.89 Td
+(Apocynaceae) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 172.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 177.89 Td
+(2) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+76.01386138613861 177.89 Td
+(Nardostachys jatamansi) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+216.09148514851486 177.89 Td
+(Jatamansi) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+336.15801980198023 177.89 Td
+(Endangered) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+436.2134653465347 177.89 Td
+(Caprifoliaceae) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 156.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 161.89 Td
+(3) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+76.01386138613861 161.89 Td
+(Taxus wallichiana) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+216.09148514851486 161.89 Td
+(Himalayan Yew) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+336.15801980198023 161.89 Td
+(Endangered) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+436.2134653465347 161.89 Td
+(Taxaceae) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 140.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 145.89 Td
+(4) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+76.01386138613861 145.89 Td
+(Aconitum heterophyllum) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+216.09148514851486 145.89 Td
+(Ativisha) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+336.15801980198023 145.89 Td
+(Endangered) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+436.2134653465347 145.89 Td
+(Ranunculaceae) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 124.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 129.89 Td
+(5) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+76.01386138613861 129.89 Td
+(Swertia chirayita) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+216.09148514851486 129.89 Td
+(Chirayita) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+336.15801980198023 129.89 Td
+(Vulnerable) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+436.2134653465347 129.89 Td
+(Gentianaceae) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 108.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 113.88999999999999 Td
+(6) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+76.01386138613861 113.88999999999999 Td
+(Commiphora wightii) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+216.09148514851486 113.88999999999999 Td
+(Guggul) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+336.15801980198023 113.88999999999999 Td
+(Endangered) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+436.2134653465347 113.88999999999999 Td
+(Burseraceae) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 92.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 97.88999999999999 Td
+(7) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+76.01386138613861 97.88999999999999 Td
+(Gymnema sylvestre) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+216.09148514851486 97.88999999999999 Td
+(Gurmar) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+336.15801980198023 97.88999999999999 Td
+(Least Concern) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+436.2134653465347 97.88999999999999 Td
+(Apocynaceae) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 76.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 81.88999999999999 Td
+(8) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+76.01386138613861 81.88999999999999 Td
+(Pterocarpus marsupium) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+216.09148514851486 81.88999999999999 Td
+(Indian Kino) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+336.15801980198023 81.88999999999999 Td
+(Vulnerable) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+436.2134653465347 81.88999999999999 Td
+(Fabaceae) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 60.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 65.88999999999999 Td
+(9) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+76.01386138613861 65.88999999999999 Td
+(Coscinium fenestratum) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+216.09148514851486 65.88999999999999 Td
+(False Calisaya) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+336.15801980198023 65.88999999999999 Td
+(Endangered) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+436.2134653465347 65.88999999999999 Td
+(Menispermaceae) Tj
+ET
+0.85 0.88 0.92 RG
+0.75 w
+45 38 m 550.28 38 l S
+BT
+/F1 8 Tf
+0.50 0.55 0.62 rg
+45 26 Td
+(Technical Methods & Pipeline Documentation) Tj
+ET
+BT
+/F2 8 Tf
+0.40 0.45 0.52 rg
+495.28 26 Td
+(Page 1 of 9) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89]
+/Contents 7 0 R
+/Resources <<
+  /Font <<
+    /F1 3 0 R
+    /F2 4 0 R
+    /F3 5 0 R
+    /F4 6 0 R
+  >>
+>> >>
+endobj
+9 0 obj
+<< /Length 7076 >>
+stream
+0.85 0.88 0.92 RG
+0.75 w
+45 803.89 m 550.28 803.89 l S
+BT
+/F4 8 Tf
+0.45 0.50 0.58 rg
+45 809.89 Td
+(Synthetic Dataset Generation for Rare Medicinal Plants) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 775.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 780.89 Td
+(10) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+76.01386138613861 780.89 Td
+(Dioscorea deltoidea) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+216.09148514851486 780.89 Td
+(Wild Yam) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+336.15801980198023 780.89 Td
+(Vulnerable) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+436.2134653465347 780.89 Td
+(Dioscoreaceae) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 759.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 764.89 Td
+(11) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+76.01386138613861 764.89 Td
+(Aquilaria malaccensis) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+216.09148514851486 764.89 Td
+(Agarwood) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+336.15801980198023 764.89 Td
+(Critically Endangered) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+436.2134653465347 764.89 Td
+(Thymelaeaceae) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 743.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 748.89 Td
+(12) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+76.01386138613861 748.89 Td
+(Gloriosa superba) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+216.09148514851486 748.89 Td
+(Flame Lily) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+336.15801980198023 748.89 Td
+(Vulnerable) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+436.2134653465347 748.89 Td
+(Colchicaceae) Tj
+ET
+0.86 0.89 0.93 RG
+0.5 w
+45.00 726.89 505.28 0.75 re
+S
+0.08 0.35 0.65 rg
+45.00 702.89 3.50 18.00 re
+f
+BT
+/F2 15 Tf
+0.08 0.22 0.42 rg
+55 706.89 Td
+(3. Phase 1 - Seed Data Collection) Tj
+ET
+BT
+/F2 12.5 Tf
+0.12 0.28 0.50 rg
+45 676.89 Td
+(3.1 Data Sources) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 659.89 Td
+(Two authenticated scientific biodiversity repositories were used:) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 642.39 Td
+(iNaturalist \(api.inaturalist.org/v1\)) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 627.89 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 624.89 Td
+(Filter: quality_grade=research - only community-verified, expert-confirmed observations) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 612.89 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 609.89 Td
+(Metadata available: observer, GPS coordinates, date, license) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 597.89 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 594.89 Td
+(License filter: cc-by, cc-by-nc, cc0 only \(open for academic use\)) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 582.89 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 579.89 Td
+(Target: ~15 images per species) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 564.89 Td
+(GBIF \(api.gbif.org/v1\)) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 550.39 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 547.39 Td
+(Source: Digitized herbarium voucher specimens from global natural history museums) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 535.39 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 532.39 Td
+(Filter: mediaType=StillImage, hasCoordinate=true) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 520.39 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 517.39 Td
+(Includes: pressed specimens, living plant photographs, botanical illustrations) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 505.39 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 502.39 Td
+(Target: ~13 images per species) Tj
+ET
+BT
+/F2 12.5 Tf
+0.12 0.28 0.50 rg
+45 477.39 Td
+(3.2 Download Algorithm) Tj
+ET
+0.88 0.90 0.93 RG
+0.5 w
+0.96 0.97 0.98 rg
+45.00 325.89 505.28 138.50 re
+B
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 454.39 Td
+(FOR each species in SPECIES_DB:) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 442.89 Td
+(    query iNaturalist API with taxon_name, quality_grade=research) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 431.39 Td
+(    download up to 15 images with open licenses) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 419.89 Td
+(    ) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 408.39 Td
+(    query GBIF API with species name) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 396.89 Td
+(    download up to 13 images with media URLs) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 385.39 Td
+(    ) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 373.89 Td
+(    save to /raw_images/<species_folder>/) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 362.39 Td
+(    log to metadata CSV \(species, source, URL, license, plant_parts\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 350.89 Td
+() Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 339.39 Td
+(OUTPUT: ~28 images per species x 12 species = ~336 raw seed images) Tj
+ET
+BT
+/F2 12.5 Tf
+0.12 0.28 0.50 rg
+45 301.89 Td
+(3.3 Metadata Schema) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 284.89 Td
+(Each downloaded image is logged with:) Tj
+ET
+0.12 0.25 0.45 rg
+45.00 248.39 505.28 20.00 re
+f
+BT
+/F2 8.5 Tf
+1 1 1 rg
+51 255.39 Td
+(Field) Tj
+ET
+BT
+/F2 8.5 Tf
+1 1 1 rg
+251.11089108910892 255.39 Td
+(Description) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 232.39 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 237.39 Td
+(`species_name`) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+251.11089108910892 237.39 Td
+(Scientific name \(folder name\)) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 216.39 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 221.39 Td
+(`common_name`) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+251.11089108910892 221.39 Td
+(Common English name) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 200.39 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 205.39 Td
+(`source`) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+251.11089108910892 205.39 Td
+(`iNaturalist` or `GBIF`) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 184.39 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 189.39 Td
+(`image_url`) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+251.11089108910892 189.39 Td
+(Original URL) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 168.39 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 173.39 Td
+(`license`) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+251.11089108910892 173.39 Td
+(Copyright license) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 152.39 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 157.39 Td
+(`plant_parts`) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+251.11089108910892 157.39 Td
+(Leaf, flower, fruit, bark, root \(where known\)) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 136.39 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 141.39 Td
+(`active_compounds`) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+251.11089108910892 141.39 Td
+(Key medicinal compounds for the species) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 120.39 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 125.38999999999999 Td
+(`image_path`) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+251.11089108910892 125.38999999999999 Td
+(Local saved path) Tj
+ET
+0.86 0.89 0.93 RG
+0.5 w
+45.00 103.39 505.28 0.75 re
+S
+0.08 0.35 0.65 rg
+45.00 79.39 3.50 18.00 re
+f
+BT
+/F2 15 Tf
+0.08 0.22 0.42 rg
+55 83.38999999999999 Td
+(4. Phase 2 - Lighting Augmentation \(Pix2Pix cGAN\)) Tj
+ET
+0.85 0.88 0.92 RG
+0.75 w
+45 38 m 550.28 38 l S
+BT
+/F1 8 Tf
+0.50 0.55 0.62 rg
+45 26 Td
+(Technical Methods & Pipeline Documentation) Tj
+ET
+BT
+/F2 8 Tf
+0.40 0.45 0.52 rg
+495.28 26 Td
+(Page 2 of 9) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89]
+/Contents 9 0 R
+/Resources <<
+  /Font <<
+    /F1 3 0 R
+    /F2 4 0 R
+    /F3 5 0 R
+    /F4 6 0 R
+  >>
+>> >>
+endobj
+11 0 obj
+<< /Length 5090 >>
+stream
+0.85 0.88 0.92 RG
+0.75 w
+45 803.89 m 550.28 803.89 l S
+BT
+/F4 8 Tf
+0.45 0.50 0.58 rg
+45 809.89 Td
+(Synthetic Dataset Generation for Rare Medicinal Plants) Tj
+ET
+BT
+/F2 12.5 Tf
+0.12 0.28 0.50 rg
+45 776.89 Td
+(4.1 Motivation) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 759.89 Td
+(Real-world plant photographs are taken under highly variable lighting conditions:) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 745.39 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 742.39 Td
+(Bright: Direct sunlight, solar glare, washed-out highlights) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 730.39 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 727.39 Td
+(Dim: Canopy shadow, overcast sky, underexposed mobile photos) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 715.39 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 712.39 Td
+(Dark: Night photography with mobile flash, high ISO noise) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 697.39 Td
+(A classifier trained only on iNaturalist images \(mostly well-lit\) will fail on field images taken) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 683.89 Td
+(under poor conditions. We simulate all three conditions both via a physics-based photometric engine) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 670.39 Td
+(\(for training data\) and via a Pix2Pix GAN \(for learning the full image distribution\).) Tj
+ET
+BT
+/F2 12.5 Tf
+0.12 0.28 0.50 rg
+45 642.89 Td
+(4.2 Photometric Engine \(Rule-Based\)) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 625.89 Td
+(Before GAN training, we generate paired training data using a differentiable photometric simulation:) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 608.39 Td
+(Bright condition:) Tj
+ET
+0.88 0.90 0.93 RG
+0.5 w
+0.96 0.97 0.98 rg
+45.00 548.39 505.28 46.50 re
+B
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 584.89 Td
+(brightness x 1.6) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 573.39 Td
+(contrast x 0.85) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 561.89 Td
+(blend with warm overlay \(255, 255, 220\) at alpha = 0.18) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 534.39 Td
+(Dim condition:) Tj
+ET
+0.88 0.90 0.93 RG
+0.5 w
+0.96 0.97 0.98 rg
+45.00 474.39 505.28 46.50 re
+B
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 510.89 Td
+(brightness x 0.55) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 499.39 Td
+(contrast x 1.10) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 487.89 Td
+(saturation x 0.75) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 460.39 Td
+(Dark condition:) Tj
+ET
+0.88 0.90 0.93 RG
+0.5 w
+0.96 0.97 0.98 rg
+45.00 400.39 505.28 46.50 re
+B
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 436.89 Td
+(brightness x 0.28) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 425.39 Td
+(contrast x 1.20) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 413.89 Td
+(add Gaussian noise N\(0, sigma=8\) to all channels) Tj
+ET
+BT
+/F2 12.5 Tf
+0.12 0.28 0.50 rg
+45 376.39 Td
+(4.3 Pix2Pix Architecture) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 359.39 Td
+(Generator: U-Net with Skip Connections) Tj
+ET
+0.88 0.90 0.93 RG
+0.5 w
+0.96 0.97 0.98 rg
+45.00 161.39 505.28 184.50 re
+B
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 335.89 Td
+(Input: 6 channels \(3 RGB image + 3 condition map broadcast\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 324.39 Td
+() Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 312.89 Td
+(Encoder \(downsampling path\):) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 301.39 Td
+(  Conv2d\(6->64, k=4, s=2\) + LeakyReLU\(0.2\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 289.89 Td
+(  Conv2d\(64->128, k=4, s=2\) + InstanceNorm + LeakyReLU\(0.2\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 278.39 Td
+(  Conv2d\(128->256, k=4, s=2\) + InstanceNorm + LeakyReLU\(0.2\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 266.89 Td
+(  Conv2d\(256->512, k=4, s=2\) + InstanceNorm + LeakyReLU\(0.2\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 255.39 Td
+(  Conv2d\(512->512, k=4, s=2\) + InstanceNorm + LeakyReLU\(0.2\)  [bottleneck]) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 243.89 Td
+() Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 232.39 Td
+(Decoder \(upsampling path with skip connections\):) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 220.89 Td
+(  ConvTranspose2d\(512->512\) + InstanceNorm + ReLU + Dropout\(0.5\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 209.39 Td
+(  ConvTranspose2d\(1024->256\) + InstanceNorm + ReLU           [concat with encoder]) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 197.89 Td
+(  ConvTranspose2d\(512->128\)  + InstanceNorm + ReLU) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 186.39 Td
+(  ConvTranspose2d\(256->64\)   + InstanceNorm + ReLU) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 174.89 Td
+(  ConvTranspose2d\(128->3, k=4, s=2\) + Tanh                  [output RGB]) Tj
+ET
+0.82 0.88 0.95 RG
+0.5 w
+0.94 0.96 0.99 rg
+45.00 113.39 505.28 38.00 re
+B
+0.15 0.48 0.85 rg
+45.00 113.39 3.50 38.00 re
+f
+BT
+/F4 9 Tf
+0.15 0.30 0.50 rg
+57 141.39 Td
+(Note: All ReLU/LeakyReLU activations use `inplace=False` to prevent autograd errors through skip) Tj
+ET
+BT
+/F4 9 Tf
+0.15 0.30 0.50 rg
+57 128.39 Td
+(connections.) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 99.38999999999999 Td
+(Discriminator: 70x70 Markovian PatchGAN) Tj
+ET
+0.85 0.88 0.92 RG
+0.75 w
+45 38 m 550.28 38 l S
+BT
+/F1 8 Tf
+0.50 0.55 0.62 rg
+45 26 Td
+(Technical Methods & Pipeline Documentation) Tj
+ET
+BT
+/F2 8 Tf
+0.40 0.45 0.52 rg
+495.28 26 Td
+(Page 3 of 9) Tj
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89]
+/Contents 11 0 R
+/Resources <<
+  /Font <<
+    /F1 3 0 R
+    /F2 4 0 R
+    /F3 5 0 R
+    /F4 6 0 R
+  >>
+>> >>
+endobj
+13 0 obj
+<< /Length 5827 >>
+stream
+0.85 0.88 0.92 RG
+0.75 w
+45 803.89 m 550.28 803.89 l S
+BT
+/F4 8 Tf
+0.45 0.50 0.58 rg
+45 809.89 Td
+(Synthetic Dataset Generation for Rare Medicinal Plants) Tj
+ET
+0.88 0.90 0.93 RG
+0.5 w
+0.96 0.97 0.98 rg
+45.00 698.39 505.28 92.50 re
+B
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 780.89 Td
+(Input: 6 channels \(real or fake image concatenated with condition\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 769.39 Td
+() Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 757.89 Td
+(Conv2d\(6->64,   k=4, s=2\) + LeakyReLU\(0.2\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 746.39 Td
+(Conv2d\(64->128, k=4, s=2\) + InstanceNorm + LeakyReLU\(0.2\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 734.89 Td
+(Conv2d\(128->256,k=4, s=2\) + InstanceNorm + LeakyReLU\(0.2\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 723.39 Td
+(Conv2d\(256->512,k=4, s=1\) + InstanceNorm + LeakyReLU\(0.2\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 711.89 Td
+(Conv2d\(512->1,  k=4, s=1\) + Sigmoid                         [patch-level real/fake]) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 684.39 Td
+(The PatchGAN outputs a 30x30 grid of real/fake predictions. Each patch covers a 70x70 receptive field) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 670.89 Td
+(in the input. This enforces local texture realism rather than global coherence.) Tj
+ET
+BT
+/F2 12.5 Tf
+0.12 0.28 0.50 rg
+45 643.39 Td
+(4.4 Loss Function) Tj
+ET
+0.85 0.88 0.93 RG
+0.5 w
+0.97 0.97 0.99 rg
+65.00 604.39 465.28 24.00 re
+B
+BT
+/F3 9 Tf
+0.12 0.25 0.45 rg
+80 613.39 Td
+(\\mathcal{L}_{total} = \\mathcal{L}_{GAN} + \\lambda \\cdot \\mathcal{L}_{L1}) Tj
+ET
+0.85 0.88 0.93 RG
+0.5 w
+0.97 0.97 0.99 rg
+65.00 570.39 465.28 24.00 re
+B
+BT
+/F3 9 Tf
+0.12 0.25 0.45 rg
+80 579.39 Td
+(\\mathcal{L}_{GAN} = \\mathbb{E}[\\log D\(x, y\)] + \\mathbb{E}[\\log\(1 - D\(x, G\(x, c\)\)\)]) Tj
+ET
+0.85 0.88 0.93 RG
+0.5 w
+0.97 0.97 0.99 rg
+65.00 536.39 465.28 24.00 re
+B
+BT
+/F3 9 Tf
+0.12 0.25 0.45 rg
+80 545.39 Td
+(\\mathcal{L}_{L1} = \\mathbb{E}[\\|y - G\(x, c\)\\|_1]) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 524.39 Td
+(Where:) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 509.89 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 506.89 Td
+($x$ = input image, $y$ = target image, $c$ = lighting condition vector) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 494.89 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 491.89 Td
+($\\lambda = 100$ \(L1 weight - preserves plant anatomy\)) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 479.89 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 476.89 Td
+(Loss: BCEWithLogitsLoss for GAN term) Tj
+ET
+BT
+/F2 12.5 Tf
+0.12 0.28 0.50 rg
+45 451.89 Td
+(4.5 Training Configuration) Tj
+ET
+0.12 0.25 0.45 rg
+45.00 415.89 505.28 20.00 re
+f
+BT
+/F2 8.5 Tf
+1 1 1 rg
+51 422.89 Td
+(Parameter) Tj
+ET
+BT
+/F2 8.5 Tf
+1 1 1 rg
+251.11089108910892 422.89 Td
+(Value) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 399.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 404.89 Td
+(Image size) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+251.11089108910892 404.89 Td
+(256 x 256) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 383.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 388.89 Td
+(Batch size) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+251.11089108910892 388.89 Td
+(4) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 367.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 372.89 Td
+(Epochs) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+251.11089108910892 372.89 Td
+(100) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 351.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 356.89 Td
+(Optimizer) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+251.11089108910892 356.89 Td
+(Adam \(beta =0.5, beta =0.999\)) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 335.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 340.89 Td
+(LR \(Generator\)) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+251.11089108910892 340.89 Td
+(2x10  ) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 319.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 324.89 Td
+(LR \(Discriminator\)) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+251.11089108910892 324.89 Td
+(2x10  ) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 303.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 308.89 Td
+(lambda L1 weight) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+251.11089108910892 308.89 Td
+(100) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 292.89 Td
+(Saved weights: sarpagandha_generator.pth, sarpagandha_discriminator.pth) Tj
+ET
+0.86 0.89 0.93 RG
+0.5 w
+45.00 269.39 505.28 0.75 re
+S
+0.08 0.35 0.65 rg
+45.00 245.39 3.50 18.00 re
+f
+BT
+/F2 15 Tf
+0.08 0.22 0.42 rg
+55 249.39 Td
+(5. Phase 3 - Background Harmonization GAN) Tj
+ET
+BT
+/F2 12.5 Tf
+0.12 0.28 0.50 rg
+45 219.39 Td
+(5.1 Motivation) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 202.39 Td
+(Plant images from iNaturalist feature diverse natural backgrounds \(forest floor, rocky terrain,) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 188.89 Td
+(grass\). A classifier should be invariant to background and focus only on plant morphology. We trained) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 175.39 Td
+(a GAN to composite segmented plant parts onto controlled backgrounds.) Tj
+ET
+BT
+/F2 12.5 Tf
+0.12 0.28 0.50 rg
+45 147.89 Td
+(5.2 Architecture) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 130.89 Td
+(HarmonizationGenerator \(U-Net, 7 input channels\):) Tj
+ET
+0.88 0.90 0.93 RG
+0.5 w
+0.96 0.97 0.98 rg
+45.00 70.89 505.28 46.50 re
+B
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 107.38999999999999 Td
+(Input: foreground \(3ch\) + background \(3ch\) + lighting_index \(1ch\) = 7ch) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 95.88999999999999 Td
+(-> U-Net encoder-decoder with skip connections) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 84.38999999999999 Td
+(-> Output: harmonized composite \(3ch, Tanh\)) Tj
+ET
+0.85 0.88 0.92 RG
+0.75 w
+45 38 m 550.28 38 l S
+BT
+/F1 8 Tf
+0.50 0.55 0.62 rg
+45 26 Td
+(Technical Methods & Pipeline Documentation) Tj
+ET
+BT
+/F2 8 Tf
+0.40 0.45 0.52 rg
+495.28 26 Td
+(Page 4 of 9) Tj
+ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89]
+/Contents 13 0 R
+/Resources <<
+  /Font <<
+    /F1 3 0 R
+    /F2 4 0 R
+    /F3 5 0 R
+    /F4 6 0 R
+  >>
+>> >>
+endobj
+15 0 obj
+<< /Length 4770 >>
+stream
+0.85 0.88 0.92 RG
+0.75 w
+45 803.89 m 550.28 803.89 l S
+BT
+/F4 8 Tf
+0.45 0.50 0.58 rg
+45 809.89 Td
+(Synthetic Dataset Generation for Rare Medicinal Plants) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 786.89 Td
+(BackgroundPatchGAN \(Discriminator\):) Tj
+ET
+0.88 0.90 0.93 RG
+0.5 w
+0.96 0.97 0.98 rg
+45.00 726.89 505.28 46.50 re
+B
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 763.39 Td
+(Input: composite image \(3ch\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 751.89 Td
+(-> 4x strided convolutions with InstanceNorm) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 740.39 Td
+(-> Output: patch-level real/fake map) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 712.89 Td
+(Backgrounds used: Soil \(RGB: 101,67,33\), Jute sack \(182,155,76\), Wooden board \(120,81,45\)) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 695.39 Td
+(Segmentation method: OpenCV GrabCut \(rect-initialized, 5 iterations\)) Tj
+ET
+0.82 0.88 0.95 RG
+0.5 w
+0.94 0.96 0.99 rg
+45.00 630.89 505.28 51.00 re
+B
+0.15 0.48 0.85 rg
+45.00 630.89 3.50 51.00 re
+f
+BT
+/F4 9 Tf
+0.15 0.30 0.50 rg
+57 671.89 Td
+(Limitation noted: GrabCut is unreliable when plant and background share similar color distributions) Tj
+ET
+BT
+/F4 9 Tf
+0.15 0.30 0.50 rg
+57 658.89 Td
+(\(green plants on green backgrounds\). This was identified as a key technical bottleneck.) Tj
+ET
+BT
+/F4 9 Tf
+0.15 0.30 0.50 rg
+57 645.89 Td
+(Production-grade segmentation would require a deep learning model \(e.g. Segment Anything Model - SAM\).) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 616.89 Td
+(Saved weights: sarpagandha_background_gan.pth) Tj
+ET
+0.86 0.89 0.93 RG
+0.5 w
+45.00 593.39 505.28 0.75 re
+S
+0.08 0.35 0.65 rg
+45.00 569.39 3.50 18.00 re
+f
+BT
+/F2 15 Tf
+0.08 0.22 0.42 rg
+55 573.39 Td
+(6. Phase 4 - CycleGAN \(Unpaired Domain Translation\)) Tj
+ET
+BT
+/F2 12.5 Tf
+0.12 0.28 0.50 rg
+45 543.39 Td
+(6.1 Motivation) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 526.39 Td
+(Pix2Pix requires perfectly paired images \(same plant, two lighting conditions\). CycleGAN removes this) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 512.89 Td
+(constraint - it learns to translate between two image domains without any paired examples. This is) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 499.39 Td
+(critical here because we cannot photograph the same rare plant twice under different conditions.) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 484.89 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 481.89 Td
+(Domain A: Clean, well-lit iNaturalist field photographs) Tj
+ET
+0.25 0.45 0.70 rg
+47.00 469.89 3.00 3.00 re
+f
+BT
+/F1 9 Tf
+0.20 0.22 0.26 rg
+57 466.89 Td
+(Domain B: Physics-simulated non-ideal variants \(bright/dim/dark photometric engine output\)) Tj
+ET
+BT
+/F2 12.5 Tf
+0.12 0.28 0.50 rg
+45 441.89 Td
+(6.2 Architecture) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 424.89 Td
+(Two generators \(9-block ResNet\):) Tj
+ET
+0.88 0.90 0.93 RG
+0.5 w
+0.96 0.97 0.98 rg
+45.00 180.89 505.28 230.50 re
+B
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 401.39 Td
+(CycleGenerator G_AB: Domain A -> Domain B  \(clean -> non-ideal\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 389.89 Td
+(CycleGenerator G_BA: Domain B -> Domain A  \(non-ideal -> clean\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 378.39 Td
+() Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 366.89 Td
+(Architecture per generator:) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 355.39 Td
+(  Input Conv: Conv2d\(3->64, k=7\) + InstanceNorm + ReLU) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 343.89 Td
+(  ) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 332.39 Td
+(  Downsampling:) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 320.89 Td
+(    Conv2d\(64->128,  k=3, s=2\) + InstanceNorm + ReLU) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 309.39 Td
+(    Conv2d\(128->256, k=3, s=2\) + InstanceNorm + ReLU) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 297.89 Td
+(  ) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 286.39 Td
+(  9x ResNet Blocks:) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 274.89 Td
+(    [Conv -> InstanceNorm -> ReLU -> Conv -> InstanceNorm] + residual skip) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 263.39 Td
+(    \(all activations inplace=False\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 251.89 Td
+(  ) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 240.39 Td
+(  Upsampling:) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 228.89 Td
+(    ConvTranspose2d\(256->128, k=3, s=2\) + InstanceNorm + ReLU) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 217.39 Td
+(    ConvTranspose2d\(128->64,  k=3, s=2\) + InstanceNorm + ReLU) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 205.89 Td
+(  ) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 194.39 Td
+(  Output Conv: Conv2d\(64->3, k=7\) + Tanh) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 166.89 Td
+(Two discriminators \(PatchGAN\):) Tj
+ET
+0.85 0.88 0.92 RG
+0.75 w
+45 38 m 550.28 38 l S
+BT
+/F1 8 Tf
+0.50 0.55 0.62 rg
+45 26 Td
+(Technical Methods & Pipeline Documentation) Tj
+ET
+BT
+/F2 8 Tf
+0.40 0.45 0.52 rg
+495.28 26 Td
+(Page 5 of 9) Tj
+ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89]
+/Contents 15 0 R
+/Resources <<
+  /Font <<
+    /F1 3 0 R
+    /F2 4 0 R
+    /F3 5 0 R
+    /F4 6 0 R
+  >>
+>> >>
+endobj
+17 0 obj
+<< /Length 5275 >>
+stream
+0.85 0.88 0.92 RG
+0.75 w
+45 803.89 m 550.28 803.89 l S
+BT
+/F4 8 Tf
+0.45 0.50 0.58 rg
+45 809.89 Td
+(Synthetic Dataset Generation for Rare Medicinal Plants) Tj
+ET
+0.88 0.90 0.93 RG
+0.5 w
+0.96 0.97 0.98 rg
+45.00 675.39 505.28 115.50 re
+B
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 780.89 Td
+(CycleDiscriminator D_A: distinguishes real Domain A from G_BA\(B\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 769.39 Td
+(CycleDiscriminator D_B: distinguishes real Domain B from G_AB\(A\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 757.89 Td
+() Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 746.39 Td
+(Architecture:) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 734.89 Td
+(  Conv2d\(3->64,    k=4, s=2\) + LeakyReLU\(0.2\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 723.39 Td
+(  Conv2d\(64->128,  k=4, s=2\) + InstanceNorm + LeakyReLU\(0.2\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 711.89 Td
+(  Conv2d\(128->256, k=4, s=2\) + InstanceNorm + LeakyReLU\(0.2\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 700.39 Td
+(  Conv2d\(256->512, k=4, s=1\) + InstanceNorm + LeakyReLU\(0.2\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 688.89 Td
+(  Conv2d\(512->1,   k=4, s=1\)   [patch output]) Tj
+ET
+BT
+/F2 12.5 Tf
+0.12 0.28 0.50 rg
+45 651.39 Td
+(6.3 Loss Functions) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 634.39 Td
+(Adversarial Loss \(LSGAN - Mean Squared Error\):) Tj
+ET
+0.85 0.88 0.93 RG
+0.5 w
+0.97 0.97 0.99 rg
+65.00 594.89 465.28 24.00 re
+B
+BT
+/F3 9 Tf
+0.12 0.25 0.45 rg
+80 603.89 Td
+(\\mathcal{L}_{GAN}\(G, D_B, A, B\) = \\mathbb{E}_b[\(D_B\(b\) - 1\)^2] + \\mathbb{E}_a[D_B\(G_{AB}\(a\)\)^2]) Tj
+ET
+0.82 0.88 0.95 RG
+0.5 w
+0.94 0.96 0.99 rg
+45.00 548.89 505.28 38.00 re
+B
+0.15 0.48 0.85 rg
+45.00 548.89 3.50 38.00 re
+f
+BT
+/F4 9 Tf
+0.15 0.30 0.50 rg
+57 576.89 Td
+(LSGAN \(MSE\) is used instead of BCE - provides smoother gradients and avoids vanishing gradients common) Tj
+ET
+BT
+/F4 9 Tf
+0.15 0.30 0.50 rg
+57 563.89 Td
+(with BCE in early training.) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 534.89 Td
+(Cycle Consistency Loss:) Tj
+ET
+0.85 0.88 0.93 RG
+0.5 w
+0.97 0.97 0.99 rg
+65.00 495.39 465.28 24.00 re
+B
+BT
+/F3 9 Tf
+0.12 0.25 0.45 rg
+80 504.39 Td
+(\\mathcal{L}_{cyc}\(G_{AB}, G_{BA}\) = \\mathbb{E}_a[\\|G_{BA}\(G_{AB}\(a\)\) - a\\|_1] + \\mathbb{E}_b[\\|G_{AB}\(G_{BA}\(b\)\) - b\\|_1]) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 483.39 Td
+(This ensures that translating A->B->A recovers the original image, preventing mode collapse and) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 469.89 Td
+(preserving plant identity.) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 452.39 Td
+(Identity Loss:) Tj
+ET
+0.85 0.88 0.93 RG
+0.5 w
+0.97 0.97 0.99 rg
+65.00 412.89 465.28 24.00 re
+B
+BT
+/F3 9 Tf
+0.12 0.25 0.45 rg
+80 421.89 Td
+(\\mathcal{L}_{id} = \\mathbb{E}_b[\\|G_{AB}\(b\) - b\\|_1] + \\mathbb{E}_a[\\|G_{BA}\(a\) - a\\|_1]) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 400.89 Td
+(Ensures that if a Domain B image is fed to G_AB, it returns unchanged. Preserves color coherence.) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 383.39 Td
+(Total Generator Loss:) Tj
+ET
+0.85 0.88 0.93 RG
+0.5 w
+0.97 0.97 0.99 rg
+65.00 343.89 465.28 24.00 re
+B
+BT
+/F3 9 Tf
+0.12 0.25 0.45 rg
+80 352.89 Td
+(\\mathcal{L}_{total} = \\mathcal{L}_{GAN}^{AB} + \\mathcal{L}_{GAN}^{BA} + \\lambda_{cyc} \\cdot \\mathcal{L}_{cyc} + \\lambda_{id} \\cdot \\mathcal{L}_{id}) Tj
+ET
+0.12 0.25 0.45 rg
+45.00 312.89 505.28 20.00 re
+f
+BT
+/F2 8.5 Tf
+1 1 1 rg
+51 319.89 Td
+(Loss weight) Tj
+ET
+BT
+/F2 8.5 Tf
+1 1 1 rg
+251.11089108910892 319.89 Td
+(Value) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 296.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 301.89 Td
+($\\lambda_{cyc}$) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+251.11089108910892 301.89 Td
+(10) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 280.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 285.89 Td
+($\\lambda_{id}$) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+251.11089108910892 285.89 Td
+(5) Tj
+ET
+BT
+/F2 12.5 Tf
+0.12 0.28 0.50 rg
+45 259.89 Td
+(6.4 Training Stabilization Techniques) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 242.89 Td
+(Image Replay Buffer:) Tj
+ET
+0.88 0.90 0.93 RG
+0.5 w
+0.96 0.97 0.98 rg
+45.00 136.89 505.28 92.50 re
+B
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 219.39 Td
+(class ImageBuffer:) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 207.89 Td
+(    """Stores last 50 generated images.) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 196.39 Td
+(    Discriminator is trained on a random mix of) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 184.89 Td
+(    newly generated + previously generated images.) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 173.39 Td
+(    Prevents discriminator from over-fitting to) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 161.89 Td
+(    the most recent generator outputs.""") Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 150.39 Td
+(    buffer_size = 50) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 122.88999999999999 Td
+(Learning Rate Scheduler:) Tj
+ET
+0.88 0.90 0.93 RG
+0.5 w
+0.96 0.97 0.98 rg
+45.00 74.39 505.28 35.00 re
+B
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 99.38999999999999 Td
+(Epochs 1-15:  constant LR = 2x10  ) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 87.88999999999999 Td
+(Epochs 16-30: linear decay -> 0) Tj
+ET
+0.85 0.88 0.92 RG
+0.75 w
+45 38 m 550.28 38 l S
+BT
+/F1 8 Tf
+0.50 0.55 0.62 rg
+45 26 Td
+(Technical Methods & Pipeline Documentation) Tj
+ET
+BT
+/F2 8 Tf
+0.40 0.45 0.52 rg
+495.28 26 Td
+(Page 6 of 9) Tj
+ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89]
+/Contents 17 0 R
+/Resources <<
+  /Font <<
+    /F1 3 0 R
+    /F2 4 0 R
+    /F3 5 0 R
+    /F4 6 0 R
+  >>
+>> >>
+endobj
+19 0 obj
+<< /Length 5264 >>
+stream
+0.85 0.88 0.92 RG
+0.75 w
+45 803.89 m 550.28 803.89 l S
+BT
+/F4 8 Tf
+0.45 0.50 0.58 rg
+45 809.89 Td
+(Synthetic Dataset Generation for Rare Medicinal Plants) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 786.89 Td
+(This allows initial stable learning before gradually reducing updates as the model converges.) Tj
+ET
+BT
+/F2 12.5 Tf
+0.12 0.28 0.50 rg
+45 759.39 Td
+(6.5 Training Configuration) Tj
+ET
+0.12 0.25 0.45 rg
+45.00 723.39 505.28 20.00 re
+f
+BT
+/F2 8.5 Tf
+1 1 1 rg
+51 730.39 Td
+(Parameter) Tj
+ET
+BT
+/F2 8.5 Tf
+1 1 1 rg
+251.11089108910892 730.39 Td
+(Value) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 707.39 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 712.39 Td
+(Image size) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+251.11089108910892 712.39 Td
+(256 x 256) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 691.39 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 696.39 Td
+(Batch size) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+251.11089108910892 696.39 Td
+(1) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 675.39 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 680.39 Td
+(Epochs) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+251.11089108910892 680.39 Td
+(30) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 659.39 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 664.39 Td
+(Optimizer) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+251.11089108910892 664.39 Td
+(Adam \(beta =0.5, beta =0.999\)) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 643.39 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 648.39 Td
+(LR) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+251.11089108910892 648.39 Td
+(2x10  ) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 627.39 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 632.39 Td
+(Normalization) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+251.11089108910892 632.39 Td
+(InstanceNorm \(not BatchNorm\)) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 611.39 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 616.39 Td
+(Replay buffer size) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+251.11089108910892 616.39 Td
+(50) Tj
+ET
+0.82 0.88 0.95 RG
+0.5 w
+0.94 0.96 0.99 rg
+45.00 566.39 505.28 38.00 re
+B
+0.15 0.48 0.85 rg
+45.00 566.39 3.50 38.00 re
+f
+BT
+/F4 9 Tf
+0.15 0.30 0.50 rg
+57 594.39 Td
+(Why InstanceNorm over BatchNorm? InstanceNorm normalizes per-image, per-channel - essential for style) Tj
+ET
+BT
+/F4 9 Tf
+0.15 0.30 0.50 rg
+57 581.39 Td
+(transfer tasks where batch statistics would corrupt style information across different plant species.) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 552.39 Td
+(Saved weights: G_AB_clean_to_nonideal.pth, G_BA_nonideal_to_clean.pth) Tj
+ET
+0.86 0.89 0.93 RG
+0.5 w
+45.00 528.89 505.28 0.75 re
+S
+0.08 0.35 0.65 rg
+45.00 504.89 3.50 18.00 re
+f
+BT
+/F2 15 Tf
+0.08 0.22 0.42 rg
+55 508.89 Td
+(7. Phase 5 - Weather Scene Simulation) Tj
+ET
+BT
+/F2 12.5 Tf
+0.12 0.28 0.50 rg
+45 478.89 Td
+(7.1 Motivation) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 461.89 Td
+(Medicinal plant images are collected across different seasons and geographies. A robust classifier) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 448.39 Td
+(must recognize the same plant in summer heat, winter cold, and monsoon rain. We simulate three primary) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 434.89 Td
+(seasons via photometric and physical modelling.) Tj
+ET
+BT
+/F2 12.5 Tf
+0.12 0.28 0.50 rg
+45 407.39 Td
+(7.2 Season Algorithms) Tj
+ET
+BT
+/F2 10.5 Tf
+0.20 0.28 0.38 rg
+45 383.39 Td
+(   Summer) Tj
+ET
+0.88 0.90 0.93 RG
+0.5 w
+0.96 0.97 0.98 rg
+45.00 291.39 505.28 81.00 re
+B
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 362.39 Td
+(Simulates: Strong direct sunlight, heat haze, warm color temperature) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 350.89 Td
+() Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 339.39 Td
+(1. Brightness x1.5, Contrast x0.9, Saturation x1.2) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 327.89 Td
+(2. Boost red channel x1.08 \(warm color temp\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 316.39 Td
+(3. Reduce blue channel x0.88) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 304.89 Td
+(4. Add Gaussian heat shimmer noise N\(0, sigma=5\) over full image) Tj
+ET
+BT
+/F2 10.5 Tf
+0.20 0.28 0.38 rg
+45 270.39 Td
+(   Winter) Tj
+ET
+0.88 0.90 0.93 RG
+0.5 w
+0.96 0.97 0.98 rg
+45.00 155.39 505.28 104.00 re
+B
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 249.39 Td
+(Simulates: Overcast cold sky, frost fog, desaturated scene) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 237.89 Td
+() Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 226.39 Td
+(1. Brightness x0.85, Saturation x0.55) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 214.89 Td
+(2. Boost blue channel x1.15 \(cool color temp\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 203.39 Td
+(3. Reduce red channel x0.90) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 191.89 Td
+(4. Blend full image with white fog overlay \(RGB: 210,210,210\) at alpha=0.22) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 180.39 Td
+(5. Bottom 25% replaced with icy blue-white snow drift \(gradient blend\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 168.89 Td
+(6. 250 random snowflake circles overlaid \(r=1-4px, alpha=0.5-0.95\)) Tj
+ET
+BT
+/F2 10.5 Tf
+0.20 0.28 0.38 rg
+45 134.39 Td
+(    Monsoon) Tj
+ET
+0.85 0.88 0.92 RG
+0.75 w
+45 38 m 550.28 38 l S
+BT
+/F1 8 Tf
+0.50 0.55 0.62 rg
+45 26 Td
+(Technical Methods & Pipeline Documentation) Tj
+ET
+BT
+/F2 8 Tf
+0.40 0.45 0.52 rg
+495.28 26 Td
+(Page 7 of 9) Tj
+ET
+endstream
+endobj
+20 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89]
+/Contents 19 0 R
+/Resources <<
+  /Font <<
+    /F1 3 0 R
+    /F2 4 0 R
+    /F3 5 0 R
+    /F4 6 0 R
+  >>
+>> >>
+endobj
+21 0 obj
+<< /Length 5882 >>
+stream
+0.85 0.88 0.92 RG
+0.75 w
+45 803.89 m 550.28 803.89 l S
+BT
+/F4 8 Tf
+0.45 0.50 0.58 rg
+45 809.89 Td
+(Synthetic Dataset Generation for Rare Medicinal Plants) Tj
+ET
+0.88 0.90 0.93 RG
+0.5 w
+0.96 0.97 0.98 rg
+45.00 686.89 505.28 104.00 re
+B
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 780.89 Td
+(Simulates: Heavy rain, wet foliage, overcast sky, high humidity) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 769.39 Td
+() Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 757.89 Td
+(1. Brightness x0.65, Saturation x1.35, Contrast x1.15) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 746.39 Td
+(2. Boost green channel x1.10 \(lush wet foliage\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 734.89 Td
+(3. Boost blue channel x1.10 \(rain atmosphere\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 723.39 Td
+(4. Rain streaks: 120 vertical line segments) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 711.89 Td
+(   - Random x, random y_start, length 8-22px) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 700.39 Td
+(   - Each streak: blend pixel toward 200 brightness at alpha=0.25-0.55) Tj
+ET
+BT
+/F2 10.5 Tf
+0.20 0.28 0.38 rg
+45 665.89 Td
+(   Autumn \(optional\)) Tj
+ET
+0.88 0.90 0.93 RG
+0.5 w
+0.96 0.97 0.98 rg
+45.00 573.89 505.28 81.00 re
+B
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 644.89 Td
+(Simulates: Autumn foliage, warm-brown color shift) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 633.39 Td
+() Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 621.89 Td
+(1. Brightness x0.95, Saturation x1.1) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 610.39 Td
+(2. Boost red channel x1.18) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 598.89 Td
+(3. Reduce green channel x0.88) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 587.39 Td
+(4. Reduce blue channel x0.75) Tj
+ET
+BT
+/F2 10.5 Tf
+0.20 0.28 0.38 rg
+45 552.89 Td
+(   Spring \(optional\)) Tj
+ET
+0.88 0.90 0.93 RG
+0.5 w
+0.96 0.97 0.98 rg
+45.00 472.39 505.28 69.50 re
+B
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 531.89 Td
+(Simulates: Fresh growth, vibrant greens, soft warm light) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 520.39 Td
+() Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 508.89 Td
+(1. Brightness x1.15, Saturation x1.3, Contrast x0.95) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 497.39 Td
+(2. Boost green channel x1.12) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 485.89 Td
+(3. Slight red boost x1.05 \(warm morning light\)) Tj
+ET
+BT
+/F2 12.5 Tf
+0.12 0.28 0.50 rg
+45 448.39 Td
+(7.3 Output) Tj
+ET
+0.12 0.25 0.45 rg
+45.00 412.39 505.28 20.00 re
+f
+BT
+/F2 8.5 Tf
+1 1 1 rg
+51 419.39 Td
+(Season) Tj
+ET
+BT
+/F2 8.5 Tf
+1 1 1 rg
+201.08316831683166 419.39 Td
+(Images per species) Tj
+ET
+BT
+/F2 8.5 Tf
+1 1 1 rg
+351.1663366336633 419.39 Td
+(Total \(12 species\)) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 396.39 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 401.39 Td
+(Summer) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+201.08316831683166 401.39 Td
+(~25) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+351.1663366336633 401.39 Td
+(~300) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 380.39 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 385.39 Td
+(Winter) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+201.08316831683166 385.39 Td
+(~25) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+351.1663366336633 385.39 Td
+(~300) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 364.39 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 369.39 Td
+(Monsoon) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+201.08316831683166 369.39 Td
+(~25) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+351.1663366336633 369.39 Td
+(~300) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 348.39 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 353.39 Td
+(Total) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+201.08316831683166 353.39 Td
+(~75) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+351.1663366336633 353.39 Td
+(~900) Tj
+ET
+0.86 0.89 0.93 RG
+0.5 w
+45.00 331.39 505.28 0.75 re
+S
+0.08 0.35 0.65 rg
+45.00 307.39 3.50 18.00 re
+f
+BT
+/F2 15 Tf
+0.08 0.22 0.42 rg
+55 311.39 Td
+(8. Final Dataset Summary) Tj
+ET
+0.12 0.25 0.45 rg
+45.00 272.39 505.28 20.00 re
+f
+BT
+/F2 8.5 Tf
+1 1 1 rg
+51 279.39 Td
+(Phase) Tj
+ET
+BT
+/F2 8.5 Tf
+1 1 1 rg
+171.06653465346534 279.39 Td
+(Variant Type) Tj
+ET
+BT
+/F2 8.5 Tf
+1 1 1 rg
+296.1358415841584 279.39 Td
+(Images per species) Tj
+ET
+BT
+/F2 8.5 Tf
+1 1 1 rg
+426.2079207920792 279.39 Td
+(Total) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 256.39 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 261.39 Td
+(Seed collection) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+171.06653465346534 261.39 Td
+(Raw \(iNat + GBIF\)) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+296.1358415841584 261.39 Td
+(~28) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+426.2079207920792 261.39 Td
+(~336) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 240.39 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 245.39 Td
+(Lighting GAN) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+171.06653465346534 245.39 Td
+(Bright / Dim / Dark) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+296.1358415841584 245.39 Td
+(~75) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+426.2079207920792 245.39 Td
+(~900) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 224.39 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 229.39 Td
+(Weather simulation) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+171.06653465346534 229.39 Td
+(Summer / Winter / Monsoon) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+296.1358415841584 229.39 Td
+(~75) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+426.2079207920792 229.39 Td
+(~900) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 208.39 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 213.39 Td
+(Grand Total) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+171.06653465346534 213.39 Td
+() Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+296.1358415841584 213.39 Td
+(~178) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+426.2079207920792 213.39 Td
+(~2,136) Tj
+ET
+BT
+/F2 12.5 Tf
+0.12 0.28 0.50 rg
+45 187.39 Td
+(Dataset Structure) Tj
+ET
+0.85 0.88 0.92 RG
+0.75 w
+45 38 m 550.28 38 l S
+BT
+/F1 8 Tf
+0.50 0.55 0.62 rg
+45 26 Td
+(Technical Methods & Pipeline Documentation) Tj
+ET
+BT
+/F2 8 Tf
+0.40 0.45 0.52 rg
+495.28 26 Td
+(Page 8 of 9) Tj
+ET
+endstream
+endobj
+22 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89]
+/Contents 21 0 R
+/Resources <<
+  /Font <<
+    /F1 3 0 R
+    /F2 4 0 R
+    /F3 5 0 R
+    /F4 6 0 R
+  >>
+>> >>
+endobj
+23 0 obj
+<< /Length 7498 >>
+stream
+0.85 0.88 0.92 RG
+0.75 w
+45 803.89 m 550.28 803.89 l S
+BT
+/F4 8 Tf
+0.45 0.50 0.58 rg
+45 809.89 Td
+(Synthetic Dataset Generation for Rare Medicinal Plants) Tj
+ET
+0.88 0.90 0.93 RG
+0.5 w
+0.96 0.97 0.98 rg
+45.00 640.89 505.28 150.00 re
+B
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 780.89 Td
+(rare_medicinal_plants/) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 769.39 Td
+(    raw_images/                  <- seed images from iNat + GBIF) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 757.89 Td
+(        Rauvolfia_serpentina/) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 746.39 Td
+(        Nardostachys_jatamansi/) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 734.89 Td
+(        ... \(12 species\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 723.39 Td
+(    synthetic_lighting/          <- original / bright / dim / dark) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 711.89 Td
+(        ... \(12 species x 4 variants\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 700.39 Td
+(    synthetic_weather/           <- summer / winter / monsoon) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 688.89 Td
+(        ... \(12 species x 3 variants\)) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 677.39 Td
+(    rare_medicinal_plants_metadata.csv) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 665.89 Td
+(    synthetic_metadata.csv) Tj
+ET
+BT
+/F3 8 Tf
+0.20 0.24 0.30 rg
+55 654.39 Td
+(    synthetic_weather_metadata.csv) Tj
+ET
+0.86 0.89 0.93 RG
+0.5 w
+45.00 620.89 505.28 0.75 re
+S
+0.08 0.35 0.65 rg
+45.00 596.89 3.50 18.00 re
+f
+BT
+/F2 15 Tf
+0.08 0.22 0.42 rg
+55 600.89 Td
+(9. Tools & Environment) Tj
+ET
+0.12 0.25 0.45 rg
+45.00 561.89 505.28 20.00 re
+f
+BT
+/F2 8.5 Tf
+1 1 1 rg
+51 568.89 Td
+(Tool) Tj
+ET
+BT
+/F2 8.5 Tf
+1 1 1 rg
+201.08316831683166 568.89 Td
+(Version) Tj
+ET
+BT
+/F2 8.5 Tf
+1 1 1 rg
+351.1663366336633 568.89 Td
+(Purpose) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 545.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 550.89 Td
+(Python) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+201.08316831683166 550.89 Td
+(3.13) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+351.1663366336633 550.89 Td
+(Core language) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 529.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 534.89 Td
+(PyTorch) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+201.08316831683166 534.89 Td
+(2.x) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+351.1663366336633 534.89 Td
+(GAN training) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 513.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 518.89 Td
+(torchvision) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+201.08316831683166 518.89 Td
+(latest) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+351.1663366336633 518.89 Td
+(Image transforms) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 497.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 502.89 Td
+(OpenCV \(cv2\)) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+201.08316831683166 502.89 Td
+(4.x) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+351.1663366336633 502.89 Td
+(GrabCut segmentation) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 481.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 486.89 Td
+(Pillow \(PIL\)) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+201.08316831683166 486.89 Td
+(<13.0) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+351.1663366336633 486.89 Td
+(Image I/O, photometric transforms) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 465.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 470.89 Td
+(NumPy) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+201.08316831683166 470.89 Td
+(1.x) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+351.1663366336633 470.89 Td
+(Array operations) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 449.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 454.89 Td
+(Pandas) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+201.08316831683166 454.89 Td
+(2.x) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+351.1663366336633 454.89 Td
+(Metadata CSV management) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 433.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 438.89 Td
+(Matplotlib) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+201.08316831683166 438.89 Td
+(3.x) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+351.1663366336633 438.89 Td
+(Visualization) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 417.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 422.89 Td
+(Google Colab) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+201.08316831683166 422.89 Td
+(T4 GPU) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+351.1663366336633 422.89 Td
+(Training platform) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 401.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 406.89 Td
+(iNaturalist API) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+201.08316831683166 406.89 Td
+(v1) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+351.1663366336633 406.89 Td
+(Seed data - field photos) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 385.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 390.89 Td
+(GBIF API) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+201.08316831683166 390.89 Td
+(v1) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+351.1663366336633 390.89 Td
+(Seed data - herbarium specimens) Tj
+ET
+BT
+/F2 12.5 Tf
+0.12 0.28 0.50 rg
+45 364.89 Td
+(Known Technical Constraints) Tj
+ET
+0.12 0.25 0.45 rg
+45.00 328.89 505.28 20.00 re
+f
+BT
+/F2 8.5 Tf
+1 1 1 rg
+51 335.89 Td
+(Issue) Tj
+ET
+BT
+/F2 8.5 Tf
+1 1 1 rg
+201.08316831683166 335.89 Td
+(Root Cause) Tj
+ET
+BT
+/F2 8.5 Tf
+1 1 1 rg
+351.1663366336633 335.89 Td
+(Resolution) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 312.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 317.89 Td
+(`rembg` ImportError) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+201.08316831683166 317.89 Td
+(NumPy conflict in Colab Python 3.13) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+351.1663366336633 317.89 Td
+(Replaced with OpenCV GrabCut) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 296.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 301.89 Td
+(`inplace=True` autograd error) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+201.08316831683166 301.89 Td
+(Skip connections in ResNet/U-Net) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+351.1663366336633 301.89 Td
+(All activations set `inplace=False`) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 280.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 285.89 Td
+(GrabCut background bleeding) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+201.08316831683166 285.89 Td
+(Similar plant/background color) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+351.1663366336633 285.89 Td
+(Identified as limitation; SAM recommended for) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.94 0.95 0.97 rg
+45.00 264.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 269.89 Td
+(LSGAN vs BCE) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+201.08316831683166 269.89 Td
+(BCE vanishing gradients) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+351.1663366336633 269.89 Td
+(Switched to MSE \(LSGAN\) for CycleGAN) Tj
+ET
+0.88 0.90 0.94 RG
+0.4 w
+0.98 0.99 1.00 rg
+45.00 248.89 505.28 16.00 re
+B
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+51 253.89 Td
+(DiffAugment IndexError) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+201.08316831683166 253.89 Td
+(PyTorch 4D tensor slice bug) Tj
+ET
+BT
+/F1 8 Tf
+0.18 0.20 0.24 rg
+351.1663366336633 253.89 Td
+(BHWC permute -> index -> BCHW) Tj
+ET
+0.86 0.89 0.93 RG
+0.5 w
+45.00 231.89 505.28 0.75 re
+S
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 223.89 Td
+(Documentation generated: November 2026) Tj
+ET
+BT
+/F1 9.5 Tf
+0.18 0.20 0.24 rg
+45 206.39 Td
+(Project: Synthetic Dataset Generation for Rare Medicinal Plant Classification) Tj
+ET
+0.85 0.88 0.92 RG
+0.75 w
+45 38 m 550.28 38 l S
+BT
+/F1 8 Tf
+0.50 0.55 0.62 rg
+45 26 Td
+(Technical Methods & Pipeline Documentation) Tj
+ET
+BT
+/F2 8 Tf
+0.40 0.45 0.52 rg
+495.28 26 Td
+(Page 9 of 9) Tj
+ET
+endstream
+endobj
+24 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89]
+/Contents 23 0 R
+/Resources <<
+  /Font <<
+    /F1 3 0 R
+    /F2 4 0 R
+    /F3 5 0 R
+    /F4 6 0 R
+  >>
+>> >>
+endobj
+xref
+0 25
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000171 00000 n 
+0000000241 00000 n 
+0000000316 00000 n 
+0000000384 00000 n 
+0000000462 00000 n 
+0000009664 00000 n 
+0000009846 00000 n 
+0000016974 00000 n 
+0000017157 00000 n 
+0000022300 00000 n 
+0000022484 00000 n 
+0000028364 00000 n 
+0000028548 00000 n 
+0000033371 00000 n 
+0000033555 00000 n 
+0000038883 00000 n 
+0000039067 00000 n 
+0000044384 00000 n 
+0000044568 00000 n 
+0000050503 00000 n 
+0000050687 00000 n 
+0000058238 00000 n 
+trailer
+<< /Size 25 /Root 1 0 R >>
+startxref
+58422
+%%EOF
